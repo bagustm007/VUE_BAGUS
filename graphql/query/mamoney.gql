@@ -1,0 +1,12 @@
+query getGaji($username: String) {
+  gaji(where: {username: {_eq: $username}}) {
+    gaji
+  }
+}
+query getPengeluaran($username: String) {
+  pengeluaran(where: {username: {_eq: $username}}) {
+    id_pengeluaran
+    jumlah
+    nama
+  }
+}

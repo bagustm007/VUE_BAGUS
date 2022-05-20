@@ -1,0 +1,8 @@
+query getUser {
+  users {
+    id_user
+    nama
+    password
+    username
+  }
+}

@@ -1,0 +1,33 @@
+mutation addGaji($gaji: Int, $username: String) {
+  insert_gaji(objects: {gaji: $gaji, username: $username}) {
+    returning {
+      gaji
+    }
+  }
+}
+mutation updateGaji($username: String,$gaji: Int) {
+  update_gaji(where: {username: {_eq: $username}}, _set: {gaji: $gaji}) {
+    returning {
+      gaji
+    }
+  }
+}
+mutation addPengeluaran($nama: String,$username: String,$jumlah:Int) {
+  insert_pengeluaran(objects: {jumlah: $jumlah, nama: $nama, username: $username}) {
+    returning {
+    id_pengeluaran
+      jumlah
+      nama
+    }
+  }
+}
+mutation delete($id: Int) {
+  delete_pengeluaran(where: {id_pengeluaran: {_eq: $id}}) {
+    returning {
+      id_pengeluaran
+      jumlah
+      nama
+      username
+    }
+  }
+}
